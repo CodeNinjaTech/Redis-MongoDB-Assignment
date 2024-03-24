@@ -62,17 +62,17 @@ SeptemberSales:
 
 In order to create a Bitmap in REDIS you may use the SETBIT command. The syntax of SETBIT is: 
 
->> SETBIT key offset value
+> SETBIT key offset value
 
 In order to create the SeptemberSales Bitmap we should enter the following commands:
 
->> SETBIT SeptemberSales 0 1
+> SETBIT SeptemberSales 0 1
 
->> SETBIT SeptemberSales 1 1
+> SETBIT SeptemberSales 1 1
 
->> SETBIT SeptemberSales 4 1
+> SETBIT SeptemberSales 4 1
 
->> SETBIT SeptemberSales 5 1
+> SETBIT SeptemberSales 5 1
 
 Having these Bitmaps at hand, makes it very easy for us to calculate things like:
 -	Which clients ordered at least once for two months in a row?
