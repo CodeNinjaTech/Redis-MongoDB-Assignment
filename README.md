@@ -93,6 +93,7 @@ AugustSales AND SeptemberSales:
 
 In REDIS the following bitwise operations are supported:
 
+| BITWISE OPERATION | PERFORMANCE |
 | --- | --- |
 | AND | A bitwise AND performs the logical AND operation on each pair of the corresponding bits. If both bits are 1, the bit in the resulting binary representation is 1 (1 & 1 = 1); otherwise, the result is 0 (1 & 0 = 0 and 0 & 0 = 0). For example: 0101 AND 0011 = 0001 |
 | OR | A bitwise OR performs the logical inclusive OR operation on each pair of corresponding bits. The result is 0 if both bits are 0; otherwise, the result is 1. For example: 0101 OR 0011 = 0111 |
