@@ -100,6 +100,43 @@ In REDIS the following bitwise operations are supported:
 | XOR | A bitwise XOR performs the logical exclusive OR operation on each pair of corresponding bits. The result is 1 if only the first bit is 1 or only the second bit is 1, but will be 0 if both are 0 or both are 1. For example: 0101 XOR 0011 = 0110 |
 | NOT | The bitwise NOT, performs logical negation on each bit. Bits that are 0 become 1, and those that are 1 become 0. For example: NOT 0111 => 1000 |
 
+These operations are performed with the BITOP command. The results of each command are written in a new key.
+
+The syntax is as follows:
+
+| |	SYNTAX | EXAMPLE |
+| --- | --- | --- |
+| AND |	BITOP AND destkey srckey1 srckey2 | BITOP AND results AugustSales SeptemberSales |
+| OR |	BITOP OR destkey srckey1 srckey2 | BITOP OR results AugustSales SeptemberSales |
+| XOR |	BITOP XOR destkey srckey1 srckey2 |	BITOP XOR results AugustSales SeptemberSales |
+| NOT |	BITOP NOT destkey srckey | BITOP NOT results AugustSales |
+
+In all these examples, the results will be written in the key “results”.
+
+In order to count the number of “1”s in a key, we may use the BITCOUNT command. So, in order to count the number of clients that ordered in August, we would do: >> BITCOUNT AugustSales
+
+Now that you are familiar with all the theory and tools that you need to work with Bitmaps in REDIS, let’s proceed with your assignment.
+
+General Note: Some users may have received more than one e-mail in the same month. If a client opened at least one of the e-mails that she/he received in the same month then we will classify this client as having opened this month’s newsletter.
+
+Provide answers for the following questions:
+
+1.1	How many users modified their listing on January? 
+Tip: Create a BITMAP called “ModificationsJanuary” and use “SETBIT -> 1” for each user that modified their listing. Use BITCOUNT to calculate the answer.
+1.2	How many users did NOT modify their listing on January?
+Tip: Use “BITOP NOT” to perform inversion on the “ModificationsJanuary” BITMAP and use BITCOUNT to calculate the answer. Combine the results with the answer of 1.1. Do these numbers match the total of your users? Even if they don’t, an explanation of why this happens will give you the full grade. Keep in mind that all BITOP operations happen at byte-level increments.
+1.3	How many users received at least one e-mail per month (at least one e-mail in January and at least one e-mail in February and at least one e-mail in March)?
+Tip: Create three BITMAPS “EmailsJanuary”, “EmailsFebruary” and “EmailsMarch”. Fill these with “SETBIT” and use “BITOP AND” followed by “BITCOUNT” in order to calculate the answer.
+1.4	How many users received an e-mail on January and March but NOT on February?
+Tip: Perform “BITOP AND” on “EmailsJanuary” and “EmailsMarch”. Perform an inversion of “EmailsFebruary” and use “BITOP AND” as well.
+1.5	How many users received an e-mail on January that they did not open but they updated their listing anyway?
+Tip: Create a new BITMAP “EmailsOpenedJanuary”.
+1.6	How many users received an e-mail on January that they did not open but they updated their listing anyway on January OR they received an e-mail on February that they did not open but they updated their listing anyway on February OR they received an e-mail on March that they did not open but they updated their listing anyway on March?
+Tip: Create two new BITMAPs “EmailsOpenedFebruary” and “EmailsOpenedMarch”. Do the same thing you did on 1.5 and calculate the answer using “BITOP OR”.
+1.7	Does it make any sense to keep sending e-mails with recommendations to sellers? Does this strategy really work? How would you describe this in terms a business person would understand?
+Tip: You may use the findings of the previous questions or calculate anything else you want in order to justify your answer. 
+1.8	(Optional Task) Do the previous subtasks again by using any type of relational or non-relational database. Compare the complexity of the solutions. Then benchmark the query execution time for the dataset that you have. At last, boost the number of entries to 1 billion rows (create your own dummy entries). Perform the benchmark again.
+
 ### Task 2
 
 In this task you are going to use the “bikes” dataset in order to generate some analytics with MongoDB.
