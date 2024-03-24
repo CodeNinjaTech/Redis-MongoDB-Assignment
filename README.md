@@ -142,7 +142,7 @@ Tip: You may use the findings of the previous questions or calculate anything el
 In this task you are going to use the “bikes” dataset in order to generate some analytics with MongoDB.
 
 1.	Add your data to MongoDB.
-```
+```markdown
 **Tip 1**: You are free to structure your data whatever way you see fit.
 Before deciding on that, read the other tasks below.
 These will help you in order to decide on the data cleaning actions that you need to perform.
