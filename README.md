@@ -54,6 +54,7 @@ AugustSales:
 |---|---|---|---|---|---|---|---|
 | 0 | 1 | 1 | 0 | 1 | 0 | 0 | 0 |
 
+| 0 | 1 | 1 | 0 | 1 | 0 | 0 | 0 |
 
 ![Screenshot 2024-03-24 220017](https://github.com/CodeNinjaTech/Redis-MongoDB-Assignment/assets/143879796/63bf5017-94fc-4399-90d5-71b1d17e03bc)
 
