@@ -142,34 +142,31 @@ Tip: You may use the findings of the previous questions or calculate anything el
 In this task you are going to use the “bikes” dataset in order to generate some analytics with MongoDB.
 
 1.	Add your data to MongoDB.
-- [x] Tip 1: You are free to structure your data whatever way you see fit. Before deciding on that, read the other tasks below. These will help you in order to decide on the data cleaning actions that you need to perform. You are allowed to perform any data cleaning actions you like. Please document all the actions that you performed (briefly) along with the reasoning behind any of your actions. The dataset is not clean. You might need to remove entries (or edit them) in order to maintain a clean database.
-- [x] Tip 2: You will need to read all the files from R, do some cleaning and then add the data to MongoDB. When dealing with files split in that many folders, there are two options on how you read these files. The first (simpler) option is to write some code that will recursively read each folder, discover the files and bring them to memory. If you choose this route, every time you execute your code, the files have to be re-discovered. This takes time. Another option is to generate a list with all the paths of the files and use this file as an index whenever you need to do some kind of manipulation (read/write) to these files. This approach will be much faster. In order to build that file, open the folder through a terminal and run the following command:
+- [x] **Tip 1**: You are free to structure your data whatever way you see fit. Before deciding on that, read the other tasks below. These will help you in order to decide on the data cleaning actions that you need to perform. You are allowed to perform any data cleaning actions you like. Please document all the actions that you performed (briefly) along with the reasoning behind any of your actions. The dataset is not clean. You might need to remove entries (or edit them) in order to maintain a clean database.
+- [x] **Tip 2**: You will need to read all the files from R, do some cleaning and then add the data to MongoDB. When dealing with files split in that many folders, there are two options on how you read these files. The first (simpler) option is to write some code that will recursively read each folder, discover the files and bring them to memory. If you choose this route, every time you execute your code, the files have to be re-discovered. This takes time. Another option is to generate a list with all the paths of the files and use this file as an index whenever you need to do some kind of manipulation (read/write) to these files. This approach will be much faster. In order to build that file, open the folder through a terminal and run the following command:
 o	Windows Powershell: dir -Recurse -Name -File > files_list.txt
 o	Unix Terminal: find * | grep json > files_list.txt
 o	Windows CMD: dir /a-D /S /B > files_list.txt
 Now, the only thing you have to do through your code is read the “files_list.txt” line by line and load the file that is in the path contained in each row. No time will be spent in order to discover the files in case you want to re-run your code. In this assignment, you have a total of ~30K files. In a real-life scenario this number could have been several millions. In this case, the second option would most probably be your only option.
-- [x] Tip 3: You will need to work on your data prior to writing to the database. Code samples of working with MongoDB through R are available on the “mongo.r” file. Use this as a reference along with the documentation of the package used.
+- [x] **Tip 3**: You will need to work on your data prior to writing to the database. Code samples of working with MongoDB through R are available on the “mongo.r” file. Use this as a reference along with the documentation of the package used.
 
 2.	How many bikes are there for sale?
 
 3.	What is the average price of a motorcycle (give a number)? What is the number of listings that were used in order to calculate this average (give a number as well)? Is the number of listings used the same as the answer in 2.2? Why?
 
 4.	What is the maximum and minimum price of a motorcycle currently available in the market?
-```
-Tip: The numbers should make sense.
-```
+- [x] **Tip**: The numbers should make sense.
+
 5.	How many listings have a price that is identified as negotiable?
-```
-Tip: Search for the word “Negotiable” in the ad.
-```
+- [x] **Tip**: Search for the word “Negotiable” in the ad.
+
 6.	(Optional) For each Brand, what percentage of its listings is listed as negotiable?
 
 7.	(Optional) What is the motorcycle brand with the highest average price?
 
 8.	(Optional) What are the TOP 10 models with the highest average age? (Round age by one decimal number)
-```
-Tip: Calculate age based on registration date. You don’t need to take into account the months (only years). Group by model, calculate AVG Age and then Sort. Keep the TOP 10. In case of draws, treat it the same way you would in a real-life scenario. 
-```
+- [x] **Tip**: Calculate age based on registration date. You don’t need to take into account the months (only years). Group by model, calculate AVG Age and then Sort. Keep the TOP 10. In case of draws, treat it the same way you would in a real-life scenario. 
+
 9.	(Optional) How many bikes have “ABS” as an extra? 
 
 10.	(Optional) What is the average Mileage of bikes that have “ABS” AND “Led lights” as an extra?
@@ -177,6 +174,4 @@ Tip: Calculate age based on registration date. You don’t need to take into acc
 11.	(Optional) What are the TOP 3 colors per bike category?
 
 12.	(Optional) Identify a set of ads that you consider “Best Deals”. 
-```
-Tip: Describe “why” in a manner that a business person would understand. Justify your decision with actual data. Even though it’s not really needed, you are free to use external data sources.
-```
+- [x] **Tip**: Describe “why” in a manner that a business person would understand. Justify your decision with actual data. Even though it’s not really needed, you are free to use external data sources.
