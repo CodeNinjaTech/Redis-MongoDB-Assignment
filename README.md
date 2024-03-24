@@ -121,21 +121,21 @@ General Note: Some users may have received more than one e-mail in the same mont
 
 Provide answers for the following questions:
 
-1.1	How many users modified their listing on January? 
+1. How many users modified their listing on January? 
 Tip: Create a BITMAP called “ModificationsJanuary” and use “SETBIT -> 1” for each user that modified their listing. Use BITCOUNT to calculate the answer.
-1.2	How many users did NOT modify their listing on January?
+2.	How many users did NOT modify their listing on January?
 Tip: Use “BITOP NOT” to perform inversion on the “ModificationsJanuary” BITMAP and use BITCOUNT to calculate the answer. Combine the results with the answer of 1.1. Do these numbers match the total of your users? Even if they don’t, an explanation of why this happens will give you the full grade. Keep in mind that all BITOP operations happen at byte-level increments.
-1.3	How many users received at least one e-mail per month (at least one e-mail in January and at least one e-mail in February and at least one e-mail in March)?
+3.	How many users received at least one e-mail per month (at least one e-mail in January and at least one e-mail in February and at least one e-mail in March)?
 Tip: Create three BITMAPS “EmailsJanuary”, “EmailsFebruary” and “EmailsMarch”. Fill these with “SETBIT” and use “BITOP AND” followed by “BITCOUNT” in order to calculate the answer.
-1.4	How many users received an e-mail on January and March but NOT on February?
+4.	How many users received an e-mail on January and March but NOT on February?
 Tip: Perform “BITOP AND” on “EmailsJanuary” and “EmailsMarch”. Perform an inversion of “EmailsFebruary” and use “BITOP AND” as well.
-1.5	How many users received an e-mail on January that they did not open but they updated their listing anyway?
+5.	How many users received an e-mail on January that they did not open but they updated their listing anyway?
 Tip: Create a new BITMAP “EmailsOpenedJanuary”.
-1.6	How many users received an e-mail on January that they did not open but they updated their listing anyway on January OR they received an e-mail on February that they did not open but they updated their listing anyway on February OR they received an e-mail on March that they did not open but they updated their listing anyway on March?
+6.	How many users received an e-mail on January that they did not open but they updated their listing anyway on January OR they received an e-mail on February that they did not open but they updated their listing anyway on February OR they received an e-mail on March that they did not open but they updated their listing anyway on March?
 Tip: Create two new BITMAPs “EmailsOpenedFebruary” and “EmailsOpenedMarch”. Do the same thing you did on 1.5 and calculate the answer using “BITOP OR”.
-1.7	Does it make any sense to keep sending e-mails with recommendations to sellers? Does this strategy really work? How would you describe this in terms a business person would understand?
+7.	Does it make any sense to keep sending e-mails with recommendations to sellers? Does this strategy really work? How would you describe this in terms a business person would understand?
 Tip: You may use the findings of the previous questions or calculate anything else you want in order to justify your answer. 
-1.8	(Optional Task) Do the previous subtasks again by using any type of relational or non-relational database. Compare the complexity of the solutions. Then benchmark the query execution time for the dataset that you have. At last, boost the number of entries to 1 billion rows (create your own dummy entries). Perform the benchmark again.
+8.	(Optional Task) Do the previous subtasks again by using any type of relational or non-relational database. Compare the complexity of the solutions. Then benchmark the query execution time for the dataset that you have. At last, boost the number of entries to 1 billion rows (create your own dummy entries). Perform the benchmark again.
 
 ### Task 2
 
