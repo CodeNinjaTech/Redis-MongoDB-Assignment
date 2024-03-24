@@ -50,9 +50,7 @@ Let’s take the following bitmap as an example. Each bit corresponds to a clien
 
 AugustSales:
 
-|   | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
-|---|---|---|---|---|---|---|---|---|
-|   | 0 | 1 | 1 | 0 | 1 | 0 | 0 | 0 |
+| 0 | 1 | 1 | 0 | 1 | 0 | 0 | 0 |
 
 
 ![Screenshot 2024-03-24 220017](https://github.com/CodeNinjaTech/Redis-MongoDB-Assignment/assets/143879796/63bf5017-94fc-4399-90d5-71b1d17e03bc)
