@@ -15,18 +15,13 @@ You are a data analyst at a consulting firm and you have access to a dataset of 
 
 ## Assignment Notes
 
-- You may work on any programming language of your choice. Code samples are provided in R but the choice of language is up to you.
-- Working with R is recommended, since the material uploaded on Moodle uses R in order to demonstrate Redis’ usage.
+- You may work on any programming language of your choice. However, working with R is recommended, since the material uploaded on Moodle uses R in order to demonstrate Redis’ usage.
 - Assignment should be done in groups of two.
 - The dataset is in JSON format. It needs cleaning. You don’t need to follow the guidelines provided below. You may do the cleaning any way you like.
 - In your deliverable, you should include (along with your code) a report justifying the steps you took in order to perform the tasks. The report should be VERY brief.
-- ONE deliverable per team. The names of the members of each team along with their AM should be included in the first page of the report.
 - Your code should be fully commented.
-- Your deliverable should be a .zip file named as AM1_AM2.zip
 - Optional tasks will have no effect on your final grade. However it’s strongly recommended that you at least try these out in order to understand the actual benefit of the tools/technologies that you are using.
 - You don’t have to follow the tips provided in the tasks. You can do it any way you prefer. However, they may come in handy.
-- The bitmaps.r file contains code samples for working with bitmaps and REDIS through R.
-- The mongo.r file contains code samples for working with MongoDB and JSON files through R.
 
 ## Tasks
 
@@ -113,7 +108,9 @@ The syntax is as follows:
 
 In all these examples, the results will be written in the key “results”.
 
-In order to count the number of “1”s in a key, we may use the BITCOUNT command. So, in order to count the number of clients that ordered in August, we would do: >> BITCOUNT AugustSales
+In order to count the number of “1”s in a key, we may use the BITCOUNT command. So, in order to count the number of clients that ordered in August, we would do: 
+
+>> BITCOUNT AugustSales
 
 Now that you are familiar with all the theory and tools that you need to work with Bitmaps in REDIS, let’s proceed with your assignment.
 
