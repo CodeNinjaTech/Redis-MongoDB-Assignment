@@ -50,6 +50,7 @@ Let’s take the following bitmap as an example. Each bit corresponds to a clien
 
 AugustSales:
 
+| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
 |---|---|---|---|---|---|---|---|
 | 0 | 1 | 1 | 0 | 1 | 0 | 0 | 0 |
 
