@@ -53,15 +53,42 @@ AugustSales:
 | 0 | 1 | 1 | 0 | 1 | 0 | 0 | 0 |
 |---|---|---|---|---|---|---|---|
 
-![Screenshot 2024-03-24 220017](https://github.com/CodeNinjaTech/Redis-MongoDB-Assignment/assets/143879796/63bf5017-94fc-4399-90d5-71b1d17e03bc)
-
 -	Clients at the 0,3,5,6,7 positions did not purchase anything. 
 -	Clients at the 1,2,4 positions did at least one transaction in August.
 
 Let’s add another bitmap to the example. It contains the September sales of the same company for the exact same clients: 
 
 SeptemberSales:
+| 1 | 1 | 0 | 0 | 1 | 1 | 0 | 0 |
+|---|---|---|---|---|---|---|---|
 
+-	Clients at the 2,3,6,7 positions did not purchase anything. 
+-	Clients at the 0,1,4,5 positions did at least one transaction in September.
+
+In order to create a Bitmap in REDIS you may use the SETBIT command. The syntax of SETBIT is: >> SETBIT key offset value
+
+In order to create the SeptemberSales Bitmap we should enter the following commands:
+
+>> SETBIT SeptemberSales 0 1
+>> SETBIT SeptemberSales 1 1
+>> SETBIT SeptemberSales 4 1
+>> SETBIT SeptemberSales 5 1
+
+Having these Bitmaps at hand, makes it very easy for us to calculate things like:
+-	Which clients ordered at least once for two months in a row?
+-	Which clients have not placed any orders within these two months?
+
+This can be achieved with the use of bit-wise logical operations.
+
+For example, in order to find out the clients that ordered at least once every month, we could perform an “AND” bitwise operation:
+
+AugustSales AND SeptemberSales:
+| 0 | 1 | 0 | 0 | 1 | 0 | 0 | 0 |
+|---|---|---|---|---|---|---|---|
+
+In REDIS the following bitwise operations are supported:
+| AND | A bitwise AND performs the logical AND operation on each pair of the corresponding bits. If both bits are 1, the bit in the resulting binary representation is 1 (1 & 1 = 1); otherwise, the result is 0 (1 & 0 = 0 and 0 & 0 = 0). For example: 0101 AND 0011 = 0001 |
+| --- | --- |
 
 
 ### Task 2
