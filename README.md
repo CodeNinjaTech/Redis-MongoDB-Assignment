@@ -110,7 +110,7 @@ In all these examples, the results will be written in the key “results”.
 
 In order to count the number of “1”s in a key, we may use the BITCOUNT command. So, in order to count the number of clients that ordered in August, we would do: 
 
->> BITCOUNT AugustSales
+> BITCOUNT AugustSales
 
 Now that you are familiar with all the theory and tools that you need to work with Bitmaps in REDIS, let’s proceed with your assignment.
 
