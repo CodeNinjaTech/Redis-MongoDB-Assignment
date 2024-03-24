@@ -142,17 +142,16 @@ Tip: You may use the findings of the previous questions or calculate anything el
 In this task you are going to use the “bikes” dataset in order to generate some analytics with MongoDB.
 
 1.	Add your data to MongoDB.
-==
-Tip 1: You are free to structure your data whatever way you see fit. Before deciding on that, read the other tasks below. These will help you in order to decide on the data cleaning actions that you need to perform. You are allowed to perform any data cleaning actions you like. Please document all the actions that you performed (briefly) along with the reasoning behind any of your actions. The dataset is not clean. You might need to remove entries (or edit them) in order to maintain a clean database.
 
-Tip 2: You will need to read all the files from R, do some cleaning and then add the data to MongoDB. When dealing with files split in that many folders, there are two options on how you read these files. The first (simpler) option is to write some code that will recursively read each folder, discover the files and bring them to memory. If you choose this route, every time you execute your code, the files have to be re-discovered. This takes time. Another option is to generate a list with all the paths of the files and use this file as an index whenever you need to do some kind of manipulation (read/write) to these files. This approach will be much faster. In order to build that file, open the folder through a terminal and run the following command:
+- [x] Tip 1: You are free to structure your data whatever way you see fit. Before deciding on that, read the other tasks below. These will help you in order to decide on the data cleaning actions that you need to perform. You are allowed to perform any data cleaning actions you like. Please document all the actions that you performed (briefly) along with the reasoning behind any of your actions. The dataset is not clean. You might need to remove entries (or edit them) in order to maintain a clean database.
+
+- [x] Tip 2: You will need to read all the files from R, do some cleaning and then add the data to MongoDB. When dealing with files split in that many folders, there are two options on how you read these files. The first (simpler) option is to write some code that will recursively read each folder, discover the files and bring them to memory. If you choose this route, every time you execute your code, the files have to be re-discovered. This takes time. Another option is to generate a list with all the paths of the files and use this file as an index whenever you need to do some kind of manipulation (read/write) to these files. This approach will be much faster. In order to build that file, open the folder through a terminal and run the following command:
 o	Windows Powershell: dir -Recurse -Name -File > files_list.txt
 o	Unix Terminal: find * | grep json > files_list.txt
 o	Windows CMD: dir /a-D /S /B > files_list.txt
 Now, the only thing you have to do through your code is read the “files_list.txt” line by line and load the file that is in the path contained in each row. No time will be spent in order to discover the files in case you want to re-run your code. In this assignment, you have a total of ~30K files. In a real-life scenario this number could have been several millions. In this case, the second option would most probably be your only option.
 
-Tip 3: You will need to work on your data prior to writing to the database. Code samples of working with MongoDB through R are available on the “mongo.r” file. Use this as a reference along with the documentation of the package used.
-==
+- [x] Tip 3: You will need to work on your data prior to writing to the database. Code samples of working with MongoDB through R are available on the “mongo.r” file. Use this as a reference along with the documentation of the package used.
 
 2.	How many bikes are there for sale?
 
