@@ -65,7 +65,9 @@ SeptemberSales:
 -	Clients at the 2,3,6,7 positions did not purchase anything. 
 -	Clients at the 0,1,4,5 positions did at least one transaction in September.
 
-In order to create a Bitmap in REDIS you may use the SETBIT command. The syntax of SETBIT is: >> SETBIT key offset value
+In order to create a Bitmap in REDIS you may use the SETBIT command. The syntax of SETBIT is: 
+
+>> SETBIT key offset value
 
 In order to create the SeptemberSales Bitmap we should enter the following commands:
 
