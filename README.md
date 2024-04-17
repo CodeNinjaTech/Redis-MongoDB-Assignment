@@ -1,5 +1,7 @@
 # Redis & MongoDB Assignment
 
+Assignment 2 for the Big Data Systems & Architectures Course of AUEB's MSc in Business Analytics
+
 ## Instructions
 
 You are going to use REDIS and MongoDB to perform an analysis on data related to classified ads from the used motorcycles market.
